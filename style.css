@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #020202;
+    --arrows: #222222;
+    --seconds: #F2A730
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    min-height: 100vh;
+}
+
+.clock {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+.arrow-hours,
+.arrow-minutes,
+.arrow-seconds {
+    position: absolute;
+    transform: translate(-50%, 0);
+    transform-origin: bottom center;
+    border-radius: 7px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+.arrow-hours {
+    top: 17.5%;
+    left: 50%;
+    width: 15px;
+    height: 32.5%;
+    background-color: var(--arrows);
+}
+
+.arrow-minutes {
+    top: 7.5%;
+    left: 50%;
+    width: 8px;
+    height: 42.5%;
+    background-color: var(--arrows);
+}
+
+.arrow-seconds {
+    top: 2.5%;
+    left: 50%;
+    width: 3px;
+    height: 47.5%;
+    background-color: var(--seconds);
+}
+
+.arrow-seconds::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%,50%);
+    width: 27.5px;
+    height: 27.5px;
+    border-radius: 50%;
+    background-color: var(--seconds);
+    z-index: 2;
+}
+
+.arrow-seconds::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 100%);
+    width: 15px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--seconds);
+}
+
+.line,
+.line-fat {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    transform-origin: bottom center;
+    width: 1px;
+    height: 50%;
+    border-radius: 5px;
+}
+
+.line::after,
+.line-fat::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0) ;
+    transform-origin: top center;
+    width: 4px;
+    height: 15px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+.line-fat::after {
+    width: 7px;
+    height: 30px;
+}
+
+.num {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.75rem;
+}
