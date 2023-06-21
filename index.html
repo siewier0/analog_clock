@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog clock - JavaScript</title>
+    <title>Analog Clock - JavaScript</title>
+    <link rel="shortcut icon" href="clock_fav.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +15,17 @@
             <div class="arrow-minutes"></div>
             <div class="arrow-seconds"></div>
         </div>
+        <form class="alarm">
+            <input type="text" name="alarm-time" id="alarm-time" required placeholder="HH:MM" autocomplete="off" target="a" title="">
+            <div class="input-info">i
+                <div class="tooltip" data-toolip-text="Proszę wpisać godzinę alarmu w formacie HH:MM">
+                    Proszę wpisać godzinę alarmu w formacie HH:MM
+                </div>
+            </div>
+            <button class="setalarm">Ustaw alarm</button>
+            <button class="remove-alarm">Usuń alarm</button>
+            <span class="alarm-info"></span>
+        </form>
     </div>
     <script src="script.js"></script>
 </body>
